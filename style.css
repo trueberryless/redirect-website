@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Jost", sans-serif;
+    user-select: none;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #22223b;
+}
+
+.icons {
+    position: absolute;
+    gap: 24px;
+    top: 5vw;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icons > img {
+    height: 32px;
+}
+
+.icons > :is(img:nth-of-type(1), img:nth-of-type(3)) {
+    overflow: hidden;
+}
+
+.icons > img:nth-of-type(2) {
+    height: 24px;
+    filter: grayscale(0.5);
+}
+
+.container {
+    width: min(80vw, 800px);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #9a8c98;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #c9ada7;
+
+    margin-top: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #f2e9e4;
+    position: relative;
+    display: inline-block;
+
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #fec10b;
+}
+
+a::before,
+a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0.25rem;
+    border-radius: 10000px;
+    background-color: #f2e9e4;
+}
+
+a::before {
+    transition: width 0.3s ease-out, background 0.3s ease-out;
+    transform-origin: bottom left;
+    top: 0.125rem;
+    right: 0;
+}
+
+a::after {
+    transition: width 0.3s ease-out, background 0.3s ease-out;
+    transform-origin: bottom right;
+    bottom: 0;
+    left: 0;
+}
+
+a:hover::before,
+a:hover::after {
+    width: 100%;
+    transform-origin: bottom left;
+    background-color: #fec10b;
+}
+
+a:hover::before {
+    transition: width 0.3s ease-out, background 0.3s ease-out;
+    transform-origin: bottom right;
+    right: unset;
+    left: 0;
+}
+
+a:hover::after {
+    transition: width 0.3s ease-out, background 0.3s ease-out;
+    transform-origin: bottom left;
+    right: 0;
+    left: unset;
+}
+
+button {
+    position: absolute;
+    bottom: 5vw;
+    left: calc((100vw - min(80vw, 800px)) / 2);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    background: #4a4e69;
+    color: #f2e9e4;
+
+    display: inline-block;
+    border: none;
+    padding: 12px 24px;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+}
+
+button:hover,
+button:focus {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.99);
+}
